@@ -22,7 +22,9 @@ export class EmployeeComponent implements OnInit {
   }
  
   printData(empData: Employee){
+    
     console.log(JSON.stringify(empData));
+    window.location.reload(true);
   }
 
 
