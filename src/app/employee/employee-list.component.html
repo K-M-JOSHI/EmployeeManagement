@@ -1,0 +1,51 @@
+
+<div class="table-responsive">
+    <table class="table"
+           *ngIf="employees && employees.length">
+        <thead>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+                <th>Contact No.</th>
+                <th>Address</th>
+                <th>User Name</th>
+                <th>Password</th>
+                <th>Gender</th>
+                <th>Qualification</th>
+                <th>Experience</th>
+                <th>Languages</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let emp of employees">
+                <td>{{emp.firstName}}</td>
+                <td>{{emp.lastName}}</td>
+                <td>{{emp.email}}</td>
+                <td>{{emp.contact}}</td>
+                <td>{{emp.address}}</td>
+                <td>{{emp.userName}}</td>
+                <td>{{emp.password}}</td>
+                <td>{{emp.gender}}</td>
+                <td>{{emp.qualification}}</td>
+                <td>{{emp.experience}}</td>
+                <td>{{emp.languages}}</td>
+                <td>  <a class="btn btn-primary" 
+                      [routerLink]="['/edit',emp.id]">
+                       EDIT
+                      </a>
+                </td>
+                <td>  <a class="btn btn-primary" 
+                       [routerLink]="['/delete',emp.id]">
+                       DELETE
+                      </a>
+                </td>
+                
+        </tbody>
+      </table>
+
+      <a [routerLink]="['/add_employee']" ><button name="add"  class="btn btn-primary" >ADD NEW EMPLOYEE</button></a>       
+     
+</div>

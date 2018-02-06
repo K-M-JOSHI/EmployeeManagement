@@ -1,5 +1,11 @@
+<div class="panel-primary">
+    <div class="panel-heading col-md-4" style="font-size:large;">
+        {{title}}
+    </div>
+</div>
 
-<form (ngSubmit)="printData(emp)" novalidate>
+<div class='panel-body container col-md-12'>
+<form novalidate>
     <div class="row">
       <div class="form-group col-md-2">
         <label for="fname">First Name:</label>
@@ -64,7 +70,7 @@
     <label for="qualification">Qualification:</label>
     <div class="row">
       <div class="form-group col-md-2">
-          <select [(ngModel)]="emp.qualification" id="qualification" name="experience">
+          <select [(ngModel)]="emp.qualification" id="qualification" name="qualification">
             <option *ngFor="let qua of qualifications" [value]="qua">{{qua}}</option>
           </select>
       </div>
@@ -90,8 +96,10 @@
 
     <div class="row">
         <div class="form-group col-md-2">
-          <input type="submit" class="btn btn-primary" id="submit" name="submit" value="Submit"/>
-        </div>
-      </div>
+            <a [routerLink]="['/employees']" (click)='addData(emp)' ><input type="submit" class="btn btn-primary" id="submit" name="submit" value="Submit"/></a>       
+         </div>
+    </div>
+     
 </form>
 
+</div>
