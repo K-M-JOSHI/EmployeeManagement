@@ -10,7 +10,6 @@ import { Employee } from './employee.model';
 })
 export class EmployeeEditComponent implements OnInit {
   id: number ;
-  codingLanguages: string[] ;
   qualifications: string[] ;
   experience: string[] ;
   emp = new Employee();
@@ -32,21 +31,12 @@ export class EmployeeEditComponent implements OnInit {
       this.router.navigateByUrl('/employees');
     }
 
-    this.codingLanguages = ['C/C++','Java','C#','PHP','Python'];
     this.qualifications = ['B.Tech','M.Tech','BCA','MCA'];
     this.experience = ['One-Year','Two-Year','Three-Year','Four-Year-Plus'];
     this.title = 'Edit Your Details:';
     
  }
 
-  ngAfterViewInit(){
-    for(let lang of this.emp.languages)
-    {
-      var x = <HTMLInputElement>document.getElementById(lang);
-      x.checked = true;
-    }
-  }
- 
   addData(empData: Employee){
        
     if(localStorage){

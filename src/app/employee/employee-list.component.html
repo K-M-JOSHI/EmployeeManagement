@@ -31,7 +31,8 @@
                 <td>{{emp.gender}}</td>
                 <td>{{emp.qualification}}</td>
                 <td>{{emp.experience}}</td>
-                <td>{{emp.languages}}</td>
+                <td><span *ngFor="let language of emp.languages"><span *ngIf="language.isEnabled">{{language.name}}</span>
+                    </span></td>
                 <td>  <a class="btn btn-primary" 
                       [routerLink]="['/edit',emp.id]">
                        EDIT

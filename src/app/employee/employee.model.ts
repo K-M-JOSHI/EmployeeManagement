@@ -12,7 +12,7 @@ export class Employee {
         public gender: string;
         public qualification: string;
         public experience: string;
-        public languages: string[];
+        public languages: object[] = [];
 
         constructor(){
             this.id = 0;
@@ -26,20 +26,7 @@ export class Employee {
             this.gender='';
             this.qualification='';
             this.experience='';
-            this.languages = [];
-        }
-
-        public add(languages: string): void{
-            var x = <HTMLInputElement>document.getElementById(languages);
-            if(x.checked){
-                this.languages.push(languages);
-            }
-            else{
-                const index: number = this.languages.indexOf(languages);
-                if (index !== -1) {
-                this.languages.splice(index, 1);
-                }        
-            }
+            this.languages = [{name:"C/C++",isEnabled:false},{name:"Java",isEnabled:false},{name:"C#",isEnabled:false},{name:"PHP",isEnabled:false},{name:"Python",isEnabled:false}];
         }
 
         public copyTo(object: any)

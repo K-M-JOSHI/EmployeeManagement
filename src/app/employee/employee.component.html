@@ -88,8 +88,8 @@
     <label for="languages">Coding Languages:</label>
     <div class="row">
         <div class="form-group col-md-2">
-        <div class="checkbox" *ngFor="let lang of codingLanguages">
-            <label><input type="checkbox" [id]="lang" (click)="emp.add(lang)" name="languages"/>{{lang}}</label>
+        <div class="checkbox" *ngFor="let lang of emp.languages">
+            <label><input type="checkbox" [id]="lang.name" [(ngModel)]="lang.isEnabled" [value]="lang.isEnabled" [name]="lang.name"/>{{lang.name}}</label>
         </div>
         </div>
     </div>
